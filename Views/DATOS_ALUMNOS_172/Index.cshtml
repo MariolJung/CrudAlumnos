@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CrudAlumnos_172.Models.DATOS_ALUMNOS_172>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Indice de Alumnos</h2>
+
+<p>
+    
+    <a href="@Url.Action("Create")"class="btn"; style="background-color:black; color:white; font-size:large">
+
+     Crear Nuevo Alumno
+    </a>
+</p>
+
+<div style="text-align:right" class="form-inline">
+    <div class="form-group">
+        <select style="text-align:right" class="form-control" id="ID" name="DATOS_ALUMNOS_172" size="1">
+            <option value="1">Apellido</option>
+            <option value="2">Nombre</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input style="text-align:right" class="form-control" type="text" placeholder="Buscar por Apellido" name="DATOS_ALUMNOS_172" />
+    </div>
+
+</div>
+<br />
+<table class="table table-bordered">
+    <thead style="background-color:black;color:white; font-size:large">
+        <tr>
+            
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.APELLIDO)
+                </center>
+            </th>
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.NOMBRE)
+                </center>
+            </th>
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.SEXO)
+                </center>
+            </th>
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.DIRECCION)
+                </center>
+            </th>
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.TELEFONO)
+                </center>
+            </th>
+            <th>
+                <center>
+                    @Html.DisplayNameFor(model => model.FECHA)
+                </center>
+            </th>
+            <th>
+                <center>
+                    ACCIONES
+                </center>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+       @*<thead style="background-color:blue;color:white">*@
+        <tr >
+        <td style="background-color: #659FEB;color:black">
+            @Html.DisplayFor(modelItem => item.APELLIDO)
+        </td>
+        <td style="background-color: #659FEB;color:black">
+            @Html.DisplayFor(modelItem => item.NOMBRE)
+        </td>
+        <td style="background-color: #659FEB;color:black"> 
+            @Html.DisplayFor(modelItem => item.SEXO)
+        </td>
+        <td style="background-color: #659FEB;color:black">
+            @Html.DisplayFor(modelItem => item.DIRECCION)
+        </td>
+        <td style="background-color: #659FEB;color:black">
+            @Html.DisplayFor(modelItem => item.TELEFONO)
+        </td>
+        <td style="background-color: #659FEB;color:black">
+            @Html.DisplayFor(modelItem => item.FECHA)
+        </td>
+        <td style="background-color:black;color:white"> 
+            <center>
+               
+                <a href="/DATOS_ALUMNOS_172/Edit/@item.ID" class="btn btn-warning">Editar <i class="glyphicon glyphicon-pencil"></i></a>
+                <a href="/DATOS_ALUMNOS_172/Details/@item.ID" class="btn btn-info">Info <i class="glyphicon glyphicon-info-sign"></i></a>
+                <a href="/DATOS_ALUMNOS_172/Delete/@item.ID" class="btn btn-danger">Borrar <i class="glyphicon glyphicon-trash"></i></a>
+            </center>
+        </td>
+    </tr>
+@*</thead>*@
+     }
+
+    </table>

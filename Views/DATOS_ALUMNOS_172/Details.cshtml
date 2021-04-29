@@ -1,0 +1,70 @@
+﻿@model CrudAlumnos_172.Models.DATOS_ALUMNOS_172
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle del Alumno</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRECCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRECCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="@Url.Action("Index")" class="btn btn-primary"> &lt; Volver Atrás</a> |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning " }) 
+
+    @*@Html.ActionLink("Back to List", "Index")*@
+
+</p>
